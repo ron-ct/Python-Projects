@@ -1,5 +1,6 @@
 #Obtaining data from the pokemon api at https://pokeapi.co/
 import requests
+import json
 
 base_url = "https://pokeapi.co/api/v2"
 
@@ -25,3 +26,16 @@ if pokemon_data:
     print(f"Pokemon Name: {pokemon_data['name']}")
     print(f"Pokemon Height: {pokemon_data['height']}")
     print(f"Pokemon Weight: {pokemon_data['weight']}")
+    with open("pokemon_data.json", "w") as file:
+        json.dump(pokemon_data, file)
+        print("Successfuly created the json file")
+
+
+# Try to read the horoscope data from horoscopeData.json and convert to json python object
+#json.load is used for reading json data from files
+
+with open("horoscopeData.json", "r") as infile:
+    loaded_data = json.load(infile)
+
+print(loaded_data)
+print(loaded_data['data'])
