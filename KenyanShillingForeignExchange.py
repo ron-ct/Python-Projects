@@ -8,6 +8,6 @@ def getCurrencyData(currency):
 
     return Currencydataframe
 
-
+#ask for user input
 currency = input("Enter the currency that exchanges with the Kenyan Shilling: ")
 print(getCurrencyData(currency))
